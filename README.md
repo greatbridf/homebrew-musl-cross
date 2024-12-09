@@ -1,13 +1,19 @@
 # homebrew-musl-cross
 
+**Fork of [FiloSottile/homebrew-musl-cross](https://github.com/filosottile/homebrew-musl-cross)**
+
+Fix build problems in new macOS versions.
+
 **One-click static-friendly musl-based GCC macOS-to-Linux cross-compilers**
 based on [richfelker/musl-cross-make](https://github.com/richfelker/musl-cross-make).
 
+Try
+
 ```
-brew install filosottile/musl-cross/musl-cross
+brew install greatbridf/musl-cross/musl-cross
 ```
 
-By default it will install full cross compiler toolchains targeting musl Linux amd64 and arm64.
+By default it will install full cross compiler toolchains targeting musl Linux amd64, arm64 and riscv64.
 
 You can then use `x86_64-linux-musl-` or `aarch64-linux-musl-` versions of the
 tools to build for the target. For example `x86_64-linux-musl-cc` will compile C
