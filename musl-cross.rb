@@ -29,6 +29,7 @@ class MuslCross < Formula
   option "without-riscv64", "Do not build cross-compilers targeting riscv64-linux-musl"
   option "without-aarch64", "Do not build cross-compilers targeting aarch64-linux-musl"
   option "without-x86_64", "Do not build cross-compilers targeting x86_64-linux-musl"
+  option "without-i386", "Do not build cross-compilers targeting i386-linux-musl"
 
   depends_on "gnu-sed" => :build
   depends_on "make" => :build
@@ -104,6 +105,7 @@ class MuslCross < Formula
     targets.push "aarch64-linux-musl" if build.with? "aarch64"
     targets.push "arm-linux-musleabihf" if build.with? "arm-hf"
     targets.push "arm-linux-musleabi" if build.with? "arm"
+    targets.push "i386-linux-musl" if build.with? "i386"
     targets.push "i486-linux-musl" if build.with? "i486"
     targets.push "mips-linux-musl" if build.with? "mips"
     targets.push "mipsel-linux-musl" if build.with? "mipsel"
@@ -161,6 +163,7 @@ class MuslCross < Formula
     EOS
 
     system "#{bin}/x86_64-linux-musl-cc", (testpath/"hello.c") if build.with? "x86_64"
+    system "#{bin}/i386-linux-musl-cc", (testpath/"hello.c") if build.with? "i386"
     system "#{bin}/i486-linux-musl-cc", (testpath/"hello.c") if build.with? "i486"
     system "#{bin}/aarch64-linux-musl-cc", (testpath/"hello.c") if build.with? "aarch64"
     system "#{bin}/arm-linux-musleabihf-cc", (testpath/"hello.c") if build.with? "arm-hf"
