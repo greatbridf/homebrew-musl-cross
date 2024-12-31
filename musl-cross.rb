@@ -11,8 +11,8 @@ class MuslCross < Formula
 
   bottle do
     root_url "https://github.com/greatbridf/homebrew-musl-cross/releases/download/musl-cross-0.9.9_3"
-    sha256 cellar: :any_skip_relocation, ventura:       "eb9af1d3906740a9dfa9d224d42052c5223ff85c330af21a650015ef8baa7b57"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "66a0d4587a1d1efbf8c8089ebd56e964b850d8e4e684aba071aaf772a783c1c6"
+    sha256 cellar: :any_skip_relocation, ventura:       "eb9af1d3906740a9dfa9d224d42052c5223ff85c330af21a650015ef8baa7b57"
   end
 
   option "with-arm-hf", "Build cross-compilers targeting arm-linux-musleabihf"
